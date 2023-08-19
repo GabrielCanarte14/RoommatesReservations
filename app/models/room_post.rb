@@ -1,7 +1,5 @@
 class RoomPost < ApplicationRecord
-    self.primary_key = 'id_room'
-
-    belongs_to :user, foreign_key: 'user_username'
-    
-    has_many :reservations, foreign_key: 'room_post_id', dependent: :destroy
+    validates :owner, presence: true
+    validates :address, presence: true 
+    validates :description, presence: true
 end

@@ -1,0 +1,23 @@
+<!-- app/views/room_posts/new.html.erb -->
+<h1>Create a New Room Post</h1>
+
+<%= form_for @room_post, data: { turbo: false } do |f| %>
+  <div>
+    <%= f.label :owner %>
+    <%= f.text_field :owner %>
+  </div>
+
+  <div>
+    <%= f.label :address %>
+    <%= f.text_field :address %>
+  </div>
+
+  <div>
+    <%= f.label :description %>
+    <%= f.text_area :description %>
+  </div>
+
+  <div>
+    <%= f.submit "Create Room Post" %>
+  </div>
+<% end %>

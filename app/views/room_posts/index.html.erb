@@ -1,0 +1,23 @@
+<!-- app/views/room_posts/index.html.erb -->
+<h1>All Room Posts</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Owner</th>
+      <th>Address</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @room_posts.each do |room_post| %>
+      <tr>
+        <td><%= room_post.id %></td>
+        <td><%= room_post.owner %></td>
+        <td><%= room_post.address %></td>
+        <td><%= room_post.description %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

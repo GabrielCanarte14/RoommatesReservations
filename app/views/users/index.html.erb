@@ -4,3 +4,9 @@
     <li><strong>Name:</strong> <%= user.name %>, <strong>Email:</strong> <%= user.email %></li>
   <% end %>
 </ul>
+
+<%= form_tag users_by_city_path, method: :get do %>
+  <%= label_tag :city, 'Filter by City:' %>
+  <%= text_field_tag :city %>
+  <%= submit_tag 'Filter' %>
+<% end %>

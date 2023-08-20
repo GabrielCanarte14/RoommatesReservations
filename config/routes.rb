@@ -6,6 +6,8 @@ Rails.application.routes.draw do
 
 
   resources :room_posts, only: [:new, :create, :index, :edit, :update]
+  resources :users, only: [:new, :create, :index]
+  get '/users/by_city', to: 'users#by_city', as: 'users_by_city'  
 
   resources :room_posts do
     member do

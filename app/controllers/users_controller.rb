@@ -15,6 +15,10 @@ class UsersController < ApplicationController
         @users = User.all
     end
 
+    def by_city
+      @city = params[:city]
+      @users = User.where(city: @city)
+    end
 
     private
 

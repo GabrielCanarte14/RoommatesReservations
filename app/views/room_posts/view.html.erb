@@ -1,0 +1,8 @@
+<h1>Room Post Details</h1>
+
+<p><strong>ID:</strong> <%= @room_post.id %></p>
+<p><strong>Owner:</strong> <%= @room_post.owner %></p>
+<p><strong>Address:</strong> <%= @room_post.address %></p>
+<p><strong>Description:</strong> <%= @room_post.description %></p>
+
+<%= link_to "Back to List", room_posts_path, class: "btn btn-primary" %>

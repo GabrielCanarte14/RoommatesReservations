@@ -1,0 +1,14 @@
+<h1>Agregar a Favoritos</h1>
+
+<%= form_for @favorite, url: favorites_path do |f| %>
+  <%= hidden_field_tag :room_id, @room_id %>
+  
+  <div>
+    <%= f.label :username, "Tu Nombre de Usuario" %>
+    <%= f.text_field :username %>
+  </div>
+
+  <div>
+    <%= f.submit "Agregar a Favoritos" %>
+  </div>
+<% end %>

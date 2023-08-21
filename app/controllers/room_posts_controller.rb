@@ -39,6 +39,7 @@ class RoomPostsController < ApplicationController
       end
     end      
 
+
     private
   
     def room_post_params

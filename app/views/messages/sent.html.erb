@@ -1,0 +1,8 @@
+<h1>Mensajes Enviados</h1>
+<ul>
+  <% @sent_messages.each do |message| %>
+    <li>
+      <strong>Destinatario:</strong> <%= message.to_user %>, <strong>Contenido:</strong> <%= message.content %>
+    </li>
+  <% end %>
+</ul>

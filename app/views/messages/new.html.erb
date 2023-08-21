@@ -1,0 +1,11 @@
+<%= form_with(model: @message, url: messages_path) do |f| %>
+  <%= f.hidden_field :to_user, value: params[:to_user] %>
+  <%= f.hidden_field :from_user, value: "NombreDeRemitente" %>
+  <div>
+    <%= f.label :content %>
+    <%= f.text_area :content %>
+  </div>
+  <div>
+    <%= f.submit "Enviar" %>
+  </div>
+<% end %>

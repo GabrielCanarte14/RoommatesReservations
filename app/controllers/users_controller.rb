@@ -20,6 +20,7 @@ class UsersController < ApplicationController
       @users = User.where(city: @city)
     end
 
+
     private
 
     def user_params

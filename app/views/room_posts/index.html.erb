@@ -27,6 +27,10 @@
         <td>
           <%= link_to "Editar", edit_room_post_path(room_post) %>
         </td>
+        <td>
+          <%= link_to "Agregar a Favoritos", new_favorite_path(room_id: room_post.id) %>
+        </td>
+
       </tr>
     <% end %>
   </tbody>

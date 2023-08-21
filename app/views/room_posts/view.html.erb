@@ -4,5 +4,6 @@
 <p><strong>Owner:</strong> <%= @room_post.owner %></p>
 <p><strong>Address:</strong> <%= @room_post.address %></p>
 <p><strong>Description:</strong> <%= @room_post.description %></p>
+<%= link_to "Marcar como Favorito", favorite_room_post_path(@room_post), method: :post %>
 
 <%= link_to "Back to List", room_posts_path, class: "btn btn-primary" %>

@@ -8,6 +8,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AvailableRoomComponent } from './components/available-room/available-room.component';
 import { RegisterComponent } from './components/register/register.component';
 import { ProfileComponent } from './components/profile/profile.component';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { FavoriteRoomsComponent } from './components/favorite-rooms/favorite-rooms.component';
+import { ChatComponent } from './components/chat/chat.component';
 
 
 
@@ -15,7 +18,9 @@ import { ProfileComponent } from './components/profile/profile.component';
   declarations: [
     AppComponent,
     RegisterComponent,
-    ProfileComponent
+    ProfileComponent,
+    FavoriteRoomsComponent,
+    ChatComponent
   ],
   imports: [
     BrowserModule,
@@ -23,6 +28,7 @@ import { ProfileComponent } from './components/profile/profile.component';
     BrowserAnimationsModule,
     NewSpaceComponent,
     AvailableRoomComponent,
+    MatSnackBarModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

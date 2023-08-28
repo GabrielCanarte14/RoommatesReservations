@@ -16,4 +16,8 @@
   p {
     margin-top: 5px;
   }
-
+  .custom-snackbar {
+    background-color: #2E6E65;
+    color: white;
+    font-weight: bold;
+  }

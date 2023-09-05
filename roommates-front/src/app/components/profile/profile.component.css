@@ -1,0 +1,77 @@
+@import '@fortawesome/fontawesome-free/css/all.min.css';.principal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; 
+}
+.profile {
+    background-color: #f4f4f4;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 60%;
+    margin-bottom: 80px;
+    display: flex;
+    align-items: center;
+  }
+  
+  
+  .info h2 {
+    margin-bottom: 10px;
+    color: #333;
+    display: flex;
+    align-items: center;
+  }
+  
+  .info h2 i {
+    margin-right: 10px;
+    font-size: 1.2rem;
+    color: #4c5759;
+  }
+  
+  .info {
+    padding-right: 20px; /* Espacio entre los divs */
+    
+  }
+  
+  .profile-title {
+    margin-bottom: 20px; /* Mayor espacio abajo del título */
+    font-size: 1.5rem; /* Aumenta el tamaño de fuente del título */
+    color: #333;
+    display: flex;
+    align-items: center;
+  }
+  
+  .info p {
+    margin-bottom: 10px; /* Mayor espacio abajo de cada párrafo */
+    font-size: 1.2rem; /* Aumenta el tamaño de fuente de los párrafos */
+  }
+  
+  .info strong {
+    font-weight: bold;
+    color: #4c5759;
+  }
+  
+  .info a {
+    color: #4c5759;
+    text-decoration: none;
+  }
+  
+  .info a:hover {
+    text-decoration: underline;
+  }
+  
+  .info .edit-link {
+    font-size: 1.2rem; 
+    display: block;
+    margin-top: 15px; 
+  }
+
+  .photo {
+    width: 100px; /* Ancho del div de la foto */
+    /* Agrega estilos para el contenido de la foto */
+  }
+  img{
+    width: 400px;
+    border-radius: 20px;
+  }

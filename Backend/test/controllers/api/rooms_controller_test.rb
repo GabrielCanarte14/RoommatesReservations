@@ -1,6 +1,6 @@
 require "test_helper"
 
-class RoomPostTest < ActiveSupport::TestCase
+class Api::RoomsControllerTest < ActionDispatch::IntegrationTest
   # test "the truth" do
   #   assert true
   # end

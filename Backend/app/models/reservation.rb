@@ -3,5 +3,5 @@ class Reservation < ApplicationRecord
 
     belongs_to :user, foreign_key: 'reserver'
 
-    belongs_to :room_post, foreign_key: 'room_post'
+    belongs_to :room, foreign_key: 'room'
 end

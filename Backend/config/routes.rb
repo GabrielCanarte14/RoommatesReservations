@@ -5,14 +5,15 @@ Rails.application.routes.draw do
   get 'messages/new'
   get 'messages/create'
   get 'messages/index'
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
-  # Defines the root path route ("/")
-  # root "articles#index"
+  namespace :api do
+    root "users#index"
+    resources :rooms, only:[:index, :show, :create, :update, :destroy]
+    resources :users, only:[:index, :show, :create, :destroy]
+  end 
 
 
-  resources :room_posts, only: [:new, :create, :index, :edit, :update]
-  resources :users, only: [:new, :create, :index]
+
   resources :messages, only: [:new, :create, :index]
   resources :favorites, only: [:new, :create, :index]
 
@@ -22,19 +23,9 @@ Rails.application.routes.draw do
   get 'messages/sent', to: 'messages#sent', as: 'sent_messages'
   
 
-
-  resources :room_posts do
-    member do
-      get 'view', to: 'room_posts#view'
-    end
-  end
-
   resources :room_posts do
     member do
       post 'favorite', to: 'room_posts#favorite'
     end
   end
-  
-
-
 end

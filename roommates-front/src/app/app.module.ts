@@ -16,6 +16,7 @@ import { CreateroomComponent } from './components/room/createroom/createroom.com
 import { EditroomComponent } from './components/room/editroom/editroom.component';
 import { MyroomsComponent } from './components/room/myrooms/myrooms.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { LoginComponent } from './components/login/login.component';
 
 
 
@@ -29,7 +30,8 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     CreateroomComponent,
     EditroomComponent,
     MyroomsComponent,
-    NavbarComponent
+    NavbarComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

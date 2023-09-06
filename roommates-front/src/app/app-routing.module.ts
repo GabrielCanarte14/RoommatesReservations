@@ -8,6 +8,7 @@ import { ChatComponent } from './components/chat/chat.component';
 import { MyroomsComponent } from './components/room/myrooms/myrooms.component';
 import { CreateroomComponent } from './components/room/createroom/createroom.component';
 import { EditroomComponent } from './components/room/editroom/editroom.component';
+import { LoginComponent } from './components/login/login.component';
 
 const routes: Routes = [
   { path: "register", component: RegisterComponent },
@@ -16,7 +17,8 @@ const routes: Routes = [
   { path: "chat", component: ChatComponent },
   { path: '', component: MyroomsComponent },
   { path: 'create/room', component: CreateroomComponent },
-  { path: 'edit/room/:roomID', component: EditroomComponent }
+  { path: 'edit/room/:roomID', component: EditroomComponent },
+  { path: 'login', component: LoginComponent}
 ];
 
 @NgModule({

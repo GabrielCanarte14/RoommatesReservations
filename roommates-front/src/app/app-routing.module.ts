@@ -20,7 +20,8 @@ const routes: Routes = [
   { path: 'create/room', component: CreateroomComponent },
   { path: 'edit/room/:roomID', component: EditroomComponent },
   { path: 'login', component: LoginComponent},
-  { path: 'feed', component: RoomsFeedComponent}
+  { path: 'feed', component: RoomsFeedComponent},
+  { path: 'rooms', component: MyroomsComponent}
 ];
 
 @NgModule({

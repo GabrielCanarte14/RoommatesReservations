@@ -1,1 +1,23 @@
-<p>rooms-feed works!</p>
+<div class="container mt-5">
+    <div class="row">
+      <div class="col-md-4" *ngFor="let room of rooms">
+        <div class="card mb-4">
+          <img src="assets\rooms\{{ room.id }}.jpg" class="card-img-top" alt="Imagen room">
+          <div class="card-body">
+            <p class="card-title"><strong>{{ room.title }}</strong></p>
+            <p class="card-text">Direction: {{ room.address }}</p>
+            <p class="card-text">City: {{ room.city }}</p>
+            <div class="hab">
+              <p class="card-text">Rooms: {{ room.roomsAvailable }}</p>
+              <p class="card-text">Price: ${{ room.price }}</p>
+              <button (click)="toggleFavorite(room)" class="btn btn-link">
+                <i [ngClass]="{'fa': true, 'fa-star': room.isFavorite, 'fa-star-o': !room.isFavorite}"></i>
+              </button>
+              <button (click)="contactRoom(room)" class="btn btn-primary">Contactar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

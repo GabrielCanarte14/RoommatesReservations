@@ -12,9 +12,35 @@ import { UserDataService } from 'src/app/services/user-data.service';
 export class RoomsFeedComponent {
 
   user: any;
-  rooms: any;
+  rooms: any[] = [];
 
   constructor(private authService: AuthService, private roomService: RoomService, private router: Router, private userDataService: UserDataService) {}
+
+  isStarFilled: boolean = false;
+
+  selectedRoom: any = null;
+  
+  toggleFavorite(room: any) {
+  room.isFavorite = !room.isFavorite; // Cambia el estado de favorito de la habitación seleccionada
+
+  // Verifica si se ha marcado como favorito
+  if (room.isFavorite) {
+      this.selectedRoom = { ...room };
+      const queryParams = {
+        owner: this.selectedRoom.owner,
+        title: this.selectedRoom.title,
+        address: this.selectedRoom.address,
+        roomsAvailable: this.selectedRoom.roomsAvailable,
+        price: this.selectedRoom.price,
+        city: this.selectedRoom.city
+      };
+    // Utiliza setTimeout para redirigir después de 3 segundos
+    setTimeout(() => {
+      this.router.navigate(['/favorites'], { queryParams });
+    }, 3000);
+  }
+}
+
 
   ngOnInit(){
     this.userDataService.user$.subscribe((user) => {
@@ -23,23 +49,25 @@ export class RoomsFeedComponent {
     this.RoomList()
   }
 
-  RoomList(){
-    this.rooms = this.roomService.findExcept(this.user.username).subscribe(
-      room => {
-        this.rooms = room
+  RoomList() {
+    this.roomService.findExcept(this.user.username).subscribe(
+      (room) => {
+        // Convierte el objeto room en un arreglo y luego agrega el campo isFavorite
+        this.rooms = Object.values(room).map((r: any) => ({ ...r, isFavorite: false }));
         console.log(this.rooms);
       }
-    )
+    );
   }
+  
 
   contactRoom(room: any) {
-    this.router.navigate(['/chat']);
+    this.selectedRoom = { ...room };
+      const queryParams = {
+        owner: this.selectedRoom.owner,
+      }
+    this.router.navigate(['/newmesage'],{ queryParams });
     // Lógica para contactar la habitación (puedes implementarla aquí)
     console.log('Contactando la habitación:', room.title);
-  }
-
-  toggleFavorite(room: any) {
-    room.isFavorite = !room.isFavorite; // Cambia el estado de favorito
   }
   
 }

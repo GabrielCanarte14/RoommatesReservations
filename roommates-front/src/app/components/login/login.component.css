@@ -1,0 +1,28 @@
+/* Dentro de tu archivo .css */
+h1 {
+    text-align: center;
+    margin-top: 5rem;
+  }
+  
+  .container {
+    margin-top: 5rem;
+  }
+  
+  .card {
+    border: none; /* Elimina el borde de la tarjeta */
+  }
+  
+  .card-title {
+    text-align: center;
+  }
+  
+  /* Estilo para centrar los botones y el enlace */
+  .text-center {
+    text-align: center !important;
+  }
+  
+  /* Margen superior para el enlace */
+  .mt-3 {
+    margin-top: 1rem !important;
+  }
+  

@@ -1,0 +1,32 @@
+<app-navbar></app-navbar>
+<h1>
+    Send a Message
+</h1>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="form">
+                <form [formGroup]="messageForm" (ngSubmit)="onSubmit()">
+                    <div class="mb-3">
+                        <label for="title" class="form-label">To: </label>
+                        <input type="text" class="form-control" id="to_user" formControlName="to_user" readonly  >
+                    </div>
+                    <div class="mb-3">
+                        <label for="owner" class="form-label">Content</label>
+                        <input type="text" class="form-control" id="content" formControlName="content" >
+                    </div>
+                    <div class="mb-3">
+                        <label for="address" class="form-label">From: </label>
+                        <input type="text" class="form-control" id="from_user" formControlName="from_user" >
+                    </div>
+                    <div class="mb-3">
+                        <button type="submit" class="btn btn-primary">Send</button>
+                    </div>
+                    <div *ngIf="!messageForm.valid" class="alert alert-danger">
+                        Please, enter the correct data
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

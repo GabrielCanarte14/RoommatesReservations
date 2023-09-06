@@ -1,8 +1,9 @@
 class Favorite < ApplicationRecord
-    validates :username, presence: true
-    validates :room_id, presence: true
-  
-    # Asociaciones
-    belongs_to :room_post, foreign_key: 'room_id'
-  end
-  
+    validates :owner, presence: true
+    validates :address, presence: true 
+    validates :title, presence: true
+    validates :price, presence: true
+    validates :city, presence: true
+    validates :roomsAvailable, presence: true
+    validates :interested, presence: true
+end

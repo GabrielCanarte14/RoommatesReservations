@@ -10,10 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_09_05_145806) do
+ActiveRecord::Schema[7.0].define(version: 2023_09_06_164917) do
   create_table "favorites", force: :cascade do |t|
-    t.string "username"
-    t.integer "room_id"
+    t.string "owner"
+    t.string "address"
+    t.string "title"
+    t.integer "roomsAvailable"
+    t.integer "price"
+    t.string "city"
+    t.string "interested"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

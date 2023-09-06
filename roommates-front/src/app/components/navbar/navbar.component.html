@@ -10,13 +10,22 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item">
-                    <button class="btn btn-primary"><a routerLink="create/room">Create Room</a></button>
+                    <button class="btn btn-primary"(click)="redirectToMyrooms()">My Rooms</button>
                 </li>
                 <li class="nav-item">
-                    <button class="btn btn-primary"><a routerLink="rooms">My Rooms</a></button>
+                    <button class="btn btn-primary"(click)="redirectToCreate()">Create Room</button>
                 </li>
                 <li class="nav-item">
-                    <button class="btn btn-primary"><a routerLink="">Sign Out</a></button>
+                    <button class="btn btn-primary"(click)="redirectToFeed()">Feed</button>
+                </li>
+                <li class="nav-item">
+                    <button class="btn btn-primary" (click)="redirectToLogin()">Sign Out</button>
+                </li>
+                <li class="nav-item">
+                    <button class="btn btn-primary" (click)="redirectToFavorito()">See My Favorites</button>
+                </li>
+                <li class="nav-item">
+                    <button class="btn btn-primary" (click)="redirectToMessages()">My messages</button>
                 </li>
             </ul>
         </div>

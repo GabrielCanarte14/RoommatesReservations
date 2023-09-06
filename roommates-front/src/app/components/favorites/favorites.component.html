@@ -1,0 +1,23 @@
+<app-navbar></app-navbar>
+<h1>
+  My Favorites
+</h1>
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md-4" *ngFor="let favorite of favorites">
+      <div class="card mb-4">
+        <img src="assets\rooms\{{ favorite.id }}.jpg" class="card-img-top" alt="Imagen room">
+        <div class="card-body">
+          <p class="card-title"><strong>{{ favorite.title }}</strong></p>
+          <p class="card-text">Direction: {{ favorite.address }}</p>
+          <p class="card-text">City: {{ favorite.city }}</p>
+          <div class="hab">
+            <p class="card-text">Rooms: {{ favorite.roomsAvailable }}</p>
+            <p class="card-text">Price: ${{ favorite.price }}</p>
+          </div>
+          <a class="btn btn-danger" (click)="deleteFavorite(favorite.id)">Delete</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

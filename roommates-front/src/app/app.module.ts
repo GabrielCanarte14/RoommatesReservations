@@ -18,6 +18,9 @@ import { MyroomsComponent } from './components/room/myrooms/myrooms.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { LoginComponent } from './components/login/login.component';
 import { RoomsFeedComponent } from './components/rooms-feed/rooms-feed.component';
+import { FavoritesComponent } from './components/favorites/favorites.component';
+import { NewMessageComponent } from './components/new-message/new-message.component';
+import { MessagesComponent } from './components/messages/messages.component';
 
 
 
@@ -33,7 +36,10 @@ import { RoomsFeedComponent } from './components/rooms-feed/rooms-feed.component
     MyroomsComponent,
     NavbarComponent,
     LoginComponent,
-    RoomsFeedComponent
+    RoomsFeedComponent,
+    FavoritesComponent,
+    NewMessageComponent,
+    MessagesComponent
   ],
   imports: [
     BrowserModule,

@@ -25,7 +25,7 @@ class Api::RoomsController < ApplicationController
   end
 
   def show
-    room = Room.find(params[:owner])
+    room = Room.find(params[:id])
     if room
       render json:room, status: 200
     else

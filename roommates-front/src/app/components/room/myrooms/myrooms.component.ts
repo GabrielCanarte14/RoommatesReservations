@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { RoomService } from 'src/app/services/room.service';
+import { UserDataService } from 'src/app/services/user-data.service';
 
 @Component({
   selector: 'app-myrooms',
@@ -8,18 +9,20 @@ import { RoomService } from 'src/app/services/room.service';
 })
 export class MyroomsComponent {
 
-  rooms:any;
+  rooms: any;
+  user: any;
 
-  constructor(private roomService: RoomService){
+  constructor(private roomService: RoomService, private userDataService: UserDataService) { }
 
-  }
-
-  ngOnInit(){
+  ngOnInit() {
+    this.userDataService.user$.subscribe((user) => {
+      this.user = user;
+    });
     this.RoomList()
   }
 
-  RoomList(){
-    this.rooms = this.roomService.listRoom().subscribe(
+  RoomList() {
+    this.rooms = this.roomService.findbyOwner(this.user.username).subscribe(
       room => {
         this.rooms = room
         console.log(this.rooms);
@@ -27,7 +30,7 @@ export class MyroomsComponent {
     )
   }
 
-  deleteRoom(id:any){
+  deleteRoom(id: any) {
     this.roomService.deleteRoom(id).subscribe(room => {
       console.log("Room has been deleted");
     })

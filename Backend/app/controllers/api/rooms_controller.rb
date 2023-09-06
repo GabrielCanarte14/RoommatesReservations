@@ -25,13 +25,30 @@ class Api::RoomsController < ApplicationController
   end
 
   def show
-    room = Room.find(params[:id])
+    room = Room.find(params[:owner])
     if room
       render json:room, status: 200
     else
       render json: { error: "Room not found!"}
     end 
   end
+
+  def rooms_except_owner
+    owner_to_exclude = params[:owner]
+  
+    @rooms = Room.where.not(owner: owner_to_exclude)
+  
+    render json: @rooms
+  end
+  
+  def rooms_byowner
+    ownerid = params[:owner]
+  
+    @rooms = Room.where(owner: ownerid)
+  
+    render json: @rooms
+  end
+  
 
   def update
     room = Room.find(params[:id])

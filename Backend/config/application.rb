@@ -22,9 +22,10 @@ module RoommatesReservations
     config.middleware.insert_before 0, Rack::Cors do
       allow do
         origins 'http://localhost:4200'  # Cambia esto según las necesidades de tu entorno
-        resource '/api/*',
+        resource '*',
           headers: :any,
-          methods: [:get, :post, :put, :patch, :delete, :options, :head]
+          methods: [:get, :post, :put, :patch, :delete, :options, :head],
+          credentials: true
       end
     end
   end

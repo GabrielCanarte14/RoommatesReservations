@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { RoomService } from 'src/app/services/room.service';
 import { AuthService } from 'src/app/services/auth.service';
 import { Router } from '@angular/router';
-
+import { UserDataService } from 'src/app/services/user-data.service';
 
 @Component({
   selector: 'app-rooms-feed',
@@ -11,18 +11,20 @@ import { Router } from '@angular/router';
 })
 export class RoomsFeedComponent {
 
-  constructor(private authService: AuthService, private roomService: RoomService, private router: Router) {}
-
-
-  user = this.authService.getauthenticatedUser();
+  user: any;
   rooms: any;
 
-  ngOnInit() {
-    this.RoomList();
+  constructor(private authService: AuthService, private roomService: RoomService, private router: Router, private userDataService: UserDataService) {}
+
+  ngOnInit(){
+    this.userDataService.user$.subscribe((user) => {
+      this.user = user;
+    });
+    this.RoomList()
   }
 
-  RoomList() {
-    this.rooms = this.roomService.listRoom().subscribe(
+  RoomList(){
+    this.rooms = this.roomService.findExcept(this.user.username).subscribe(
       room => {
         this.rooms = room
         console.log(this.rooms);

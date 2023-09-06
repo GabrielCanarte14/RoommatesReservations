@@ -25,6 +25,14 @@ export class RoomService {
     return this.http.get(this.url + '/api/rooms/' + id);
   }
 
+  findbyOwner(owner: any) {
+    return this.http.get(this.url + '/api/rooms/byowner/' + owner);
+  }
+
+  findExcept(id: any) {
+    return this.http.get(this.url + '/api/rooms/except_owner/' + id);
+  }
+
   updateRoom(data: any, id: any) { 
     return this.http.put(this.url + '/api/rooms/' + id, data, this.httpOptions);
   }

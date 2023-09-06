@@ -8,7 +8,12 @@ Rails.application.routes.draw do
 
   namespace :api do
     root "users#index"
-    resources :rooms, only:[:index, :show, :create, :update, :destroy]
+    resources :rooms, only:[:index, :show, :create, :update, :destroy] do
+      collection do
+        get 'except_owner/:owner', to: 'rooms#rooms_except_owner', as: 'except_owner'
+        get 'byowner/:owner', to: 'rooms#rooms_byowner', as: 'byowner'
+      end
+    end
     resources :users, only:[:index, :show, :create, :destroy]
   end 
 

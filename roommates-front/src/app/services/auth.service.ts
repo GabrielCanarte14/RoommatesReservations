@@ -6,10 +6,17 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 })
 export class AuthService {
   isLoggedIn = false;
+  authenticatedUser=null
   url: string = "http://127.0.0.1:3000"
 
   constructor(private http: HttpClient) { }
 
+  setauthenticatedUser(user:any){
+    this.authenticatedUser=user;
+  }
+  getauthenticatedUser(){
+    return this.authenticatedUser;
+  }
   login() {
     this.isLoggedIn = true;
   }

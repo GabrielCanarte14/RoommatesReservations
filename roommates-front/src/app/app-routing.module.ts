@@ -9,16 +9,18 @@ import { MyroomsComponent } from './components/room/myrooms/myrooms.component';
 import { CreateroomComponent } from './components/room/createroom/createroom.component';
 import { EditroomComponent } from './components/room/editroom/editroom.component';
 import { LoginComponent } from './components/login/login.component';
+import { RoomsFeedComponent } from './components/rooms-feed/rooms-feed.component';
 
 const routes: Routes = [
   { path: "register", component: RegisterComponent },
   { path: "profile", component: ProfileComponent },
   { path: "favorites", component: FavoriteRoomsComponent },
   { path: "chat", component: ChatComponent },
-  { path: '', component: MyroomsComponent },
+  { path: '', component: LoginComponent },
   { path: 'create/room', component: CreateroomComponent },
   { path: 'edit/room/:roomID', component: EditroomComponent },
-  { path: 'login', component: LoginComponent}
+  { path: 'login', component: LoginComponent},
+  { path: 'feed', component: RoomsFeedComponent}
 ];
 
 @NgModule({

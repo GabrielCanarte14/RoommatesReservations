@@ -54,7 +54,8 @@ UserList(){
     const userAuth = this.users.find((u: { username: string | null | undefined; password: string | null | undefined; }) => u.username === username && u.password === password);
     if (userAuth) {
       this.authService.login();
-      this.router.navigate(['/create/room'])
+      this.authService.setauthenticatedUser(userAuth);
+      this.router.navigate(['/feed']);
     } else {
       // Autenticación fallida, muestra un mensaje de error
       this.errorMessage = 'Credenciales incorrectas. Por favor, inténtalo de nuevo.';

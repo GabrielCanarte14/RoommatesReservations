@@ -17,6 +17,7 @@ import { EditroomComponent } from './components/room/editroom/editroom.component
 import { MyroomsComponent } from './components/room/myrooms/myrooms.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { LoginComponent } from './components/login/login.component';
+import { RoomsFeedComponent } from './components/rooms-feed/rooms-feed.component';
 
 
 
@@ -31,7 +32,8 @@ import { LoginComponent } from './components/login/login.component';
     EditroomComponent,
     MyroomsComponent,
     NavbarComponent,
-    LoginComponent
+    LoginComponent,
+    RoomsFeedComponent
   ],
   imports: [
     BrowserModule,

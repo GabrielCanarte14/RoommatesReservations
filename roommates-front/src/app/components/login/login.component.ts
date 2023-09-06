@@ -10,15 +10,39 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent {
 
-username = "";
-password = "";
-errorMessage: string = ''; // Propiedad para mostrar mensajes de error
 
+errorMessage: string = ''; // Propiedad para mostrar mensajes de error
+users: any
+
+ngOnInit(){
+  this.UserList()
+}
+
+UserList(){
+  this.users = this.authService.listUsers().subscribe(
+    user => {
+      this.users = user
+      console.log(this.users);
+    }
+  )
+}
+
+
+  user:any;
+  
+  userForm = new FormGroup({
+    username: new FormControl(''),
+    password: new FormControl('')
+  });
+
+  
   constructor(private authService: AuthService, private router: Router) {};
 
   onLogin() {
+    const username = this.userForm.get("username")?.value;
+    const password = this.userForm.get("password")?.value;
     // Simulación de inicio de sesión (compara el correo y la contraseña con valores predefinidos)
-    if (this.username === '' || this.password === '') {
+    if (username === '' || password === '') {
       this.errorMessage = 'Por favor, completa ambos campos.';
       return; // Detener la función si falta información
     }
@@ -27,7 +51,8 @@ errorMessage: string = ''; // Propiedad para mostrar mensajes de error
     // Por ejemplo, puedes enviar estos valores a tu servicio de autenticación.
 
     // Simulando una autenticación exitosa
-    if (this.username === 'usuario' && this.password === 'contraseña') {
+    const userAuth = this.users.find((u: { username: string | null | undefined; password: string | null | undefined; }) => u.username === username && u.password === password);
+    if (userAuth) {
       this.authService.login();
       this.router.navigate(['/create/room'])
     } else {

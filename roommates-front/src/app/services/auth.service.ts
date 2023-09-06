@@ -23,8 +23,11 @@ export class AuthService {
   };
 
   createUser(data: any) {
-    return this.http.post(this.url + '/api/user', data, this.httpOptions);
+    return this.http.post(this.url + '/api/users', data, this.httpOptions);
   }
 
+  listUsers() {
+    return this.http.get(this.url + '/api/users');
+  }
 
 }

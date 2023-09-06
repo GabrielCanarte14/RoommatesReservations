@@ -13,14 +13,14 @@ export class RegisterComponent {
   userForm = new FormGroup({
     username: new FormControl(''),
     email: new FormControl(''),
-    pass: new FormControl(''),
+    password: new FormControl(''),
     name: new FormControl(''),
     city: new FormControl(''),
     age: new FormControl('')
   });
   constructor(private authService: AuthService) {}
 
-  onRegister() {
+  onSubmit() {
     if (this.userForm.valid) {
       this.authService.createUser(this.userForm.value).subscribe(
         (user) => {

@@ -4,14 +4,14 @@
       <div class="col-md-6">
         <h3>User Login</h3>
         <div class="form">
-            <form (ngSubmit)="onLogin()">
+            <form [formGroup]="userForm" (ngSubmit)="onLogin()">
                 <div class="mb-3">
                     <label for="username" class="form-label">Username</label>
-                    <input type="text" class="form-control" id="username" formControlName="username" [(ngModel)]="username">
+                    <input type="text" class="form-control" id="username" formControlName="username">
                 </div>
                 <div class="mb-3">
-                    <label for="pass" class="form-label">Password</label>
-                    <input type="text" class="form-control" id="pass" formControlName="pass" [(ngModel)]="password">
+                    <label for="password" class="form-label">Password</label>
+                    <input type="text" class="form-control" id="password" formControlName="password">
                 </div>
 
                 <div class="mb-3">
